@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>{{petName}}'s Pet Insurance Quotes Are Ready</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset styles */
+    body, table, td, p, a, li, blockquote { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0 !important; padding: 0 !important; width: 100% !important; overflow-x: hidden !important; }
+    table { border-collapse: collapse !important; }
+    
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+    
+    /* Ensure Work Sans is applied to footer text */
+    td[style*="Work Sans"] {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+    }
+    
+    /* Schnyder Font - Note: Most email clients will fall back to Georgia */
+    @font-face {
+      font-family: 'Schnyder S';
+      src: url('{{cdnBaseUrl}}/fonts/SchnyderS-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    /* Plan card border radius */
+    .plan-card-wrapper,
+    table[style*="border-radius"] {
+      border-radius: 8px !important;
+      -webkit-border-radius: 8px !important;
+      -moz-border-radius: 8px !important;
+    }
+    
+    /* Mobile styles */
+    @media only screen and (max-width: 600px) {
+      .email-container { width: 100% !important; max-width: 360px !important; min-width: 0 !important; }
+      .content-padding { padding-left: 16px !important; padding-right: 16px !important; padding-top: inherit !important; padding-bottom: inherit !important; }
+      td.content-padding[style*="padding"] { padding-left: 16px !important; padding-right: 16px !important; }
+      td.content-padding[style*="padding: 0 24px"] { padding: 0 16px !important; }
+      td.content-padding[style*="padding: 20px 24px"] { padding: 20px 16px !important; }
+      td.content-padding[style*="padding: 0 24px 40px"] { padding: 0 16px 40px !important; }
+      td[style*="padding: 12px 24px"] { padding: 12px 16px !important; }
+      td[style*="padding: 20px 24px"] { padding: 20px 16px !important; }
+      td[style*="padding: 32px 24px"] { padding: 32px 16px !important; }
+      .hero-image { height: 280px !important; width: 100% !important; max-width: 100% !important; }
+      .headline { font-size: 28px !important; line-height: 36px !important; }
+      h1.headline { font-size: 28px !important; line-height: 36px !important; }
+      .plan-card { padding: 16px !important; }
+      .plan-details { display: block !important; }
+      .plan-left { width: 100% !important; display: block !important; border-right: none !important; border: none !important; padding-right: 0 !important; margin-bottom: 16px !important; }
+      td.plan-left { border-right: none !important; border: none !important; }
+      .plan-right { width: 100% !important; display: block !important; padding-left: 0 !important; padding-right: 0 !important; }
+      .plan-stats { display: table !important; width: 100% !important; text-align: left !important; table-layout: fixed !important; }
+      .plan-stats tr { display: table-row !important; }
+      .plan-stat { display: table-cell !important; width: 33.33% !important; padding-right: 8px !important; padding-left: 0 !important; vertical-align: top !important; }
+      .plan-stat:first-child { padding-left: 0 !important; padding-right: 12px !important; }
+      .plan-stat:nth-child(2) { padding-left: 8px !important; padding-right: 12px !important; }
+      .plan-stat:last-child { padding-right: 0 !important; padding-left: 8px !important; }
+      .plan-stat span { display: block !important; }
+      .divider-vertical { display: none !important; }
+      .footer-image { width: 100% !important; max-width: 280px !important; }
+      .top-banner-text { font-size: 12px !important; }
+      .section-heading { font-size: 20px !important; line-height: 28px !important; }
+      
+      /* Smaller logo on mobile */
+      img[src*="forbes-advisor-logo"] { max-width: 120px !important; width: 120px !important; height: auto !important; }
+      img[src*="forbes-logo"] { max-width: 60px !important; width: 60px !important; height: auto !important; }
+      
+      /* Stack top banner on mobile */
+      table[width="100%"] tr:first-child td:first-child { width: 100% !important; display: block !important; padding-bottom: 4px !important; }
+      table[width="100%"] tr:first-child td:last-child { width: 100% !important; display: block !important; text-align: left !important; padding-top: 0 !important; }
+      
+      /* Ensure all tables wrap properly on mobile */
+      table[width="600"], table.email-container { width: 100% !important; max-width: 360px !important; min-width: 0 !important; margin: 0 auto !important; display: table !important; }
+      table[width="552"] { width: 100% !important; max-width: 100% !important; }
+      td[width] { width: auto !important; max-width: 100% !important; }
+      body { overflow-x: hidden !important; }
+      * { max-width: 100% !important; box-sizing: border-box !important; }
+      
+      /* Make images responsive */
+      img { max-width: 100% !important; height: auto !important; }
+      img[width="552"] { width: 100% !important; max-width: 100% !important; }
+      
+      /* Stack elements vertically */
+      .plan-left, .plan-right { width: 100% !important; display: block !important; }
+      
+      /* Fix text wrapping */
+      td { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+      
+      /* Benefits section mobile spacing */
+      td[style*="padding: 12px 16px"] { 
+        padding: 12px 16px !important; 
+        margin-bottom: 8px !important;
+      }
+      td[width="44"] { width: 44px !important; min-width: 44px !important; padding-right: 12px !important; }
+      td[width="44"] + td { padding-left: 0 !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: Helvetica, Arial, sans-serif;">
+  <!-- Preview text -->
+  <div style="display: none; max-height: 0; overflow: hidden;">
+    Focus on your pet's health and not financial stress. Compare your top cat insurance matches now.
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
+
+  <!-- Main wrapper -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+      <td align="center" valign="top">
+        
+        <!-- Email container -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="width: 600px; max-width: 100%; margin: 0 auto;">
+          
+          <!-- Top Banner -->
+          <tr>
+            <td style="background-color: #FFD17F; padding: 12px 24px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td class="top-banner-text" style="font-family: 'Work Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; color: #000000; text-transform: capitalize; line-height: 24px; width: 70%;">
+                    Save $1,000+ With Top Insurance Recommendations
+                  </td>
+                  <td align="right" style="font-family: 'Work Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; color: #000000; text-decoration: underline; text-transform: capitalize; line-height: 24px; width: 30%;">
+                    <a href="{{viewQuotesUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=banner" style="color: #000000; text-decoration: underline;">View Quotes</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Forbes Advisor Header -->
+          <tr>
+            <td align="center" class="content-padding" style="padding: 20px 24px;">
+              <img src="{{cdnBaseUrl}}/forbes-advisor-logo.svg" alt="Forbes Advisor" width="167" height="21" style="display: block; max-width: 167px; width: auto;">
+            </td>
+          </tr>
+
+          <!-- Hero Section -->
+          <tr>
+            <td class="content-padding" style="padding: 0 24px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <!-- Headline -->
+                <tr>
+                  <td align="center" style="padding-bottom: 12px;">
+                    <h1 class="headline" style="margin: 0; font-family: 'Schnyder S', Georgia, 'Times New Roman', serif; font-size: 44px; font-weight: 700; color: #1E2125; line-height: 58px; text-align: center; max-width: 100%;">
+                      {{petName}}'s Pet Insurance Quotes Are Ready
+                    </h1>
+                  </td>
+                </tr>
+                <!-- Subheadline -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; color: #000000; line-height: 24px; text-align: center;">
+                      Focus on your pet's health and not financial stress. Compare your top cat insurance matches now.
+                    </p>
+                  </td>
+                </tr>
+                <!-- Primary CTA -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{viewQuoteUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=hero-cta" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            View Your Quote
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Hero Image -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <img class="hero-image" src="{{cdnBaseUrl}}/hero-cat-owner.jpg" alt="Cat with owner" width="552" style="display: block; width: 100%; max-width: 100%; height: auto; border-radius: 24px;">
+                  </td>
+                </tr>
+                <!-- Secondary CTA -->
+                <tr>
+                  <td align="center" style="padding-bottom: 40px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{compareQuotesUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=secondary-cta" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            Compare Top Quotes
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Plans Section -->
+          <tr>
+            <td class="content-padding" style="padding: 0 24px 40px;">
+              <!-- Section Heading -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <h2 class="section-heading" style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 32px; text-align: center; text-transform: capitalize;">
+                      Today's Top Deals Based On {{petName}}'s Details
+                    </h2>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Plan Card 1 - Spot (Popular) -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px;">
+                <!-- Badge row - positioned above card -->
+                <tr>
+                  <td style="padding: 0; padding-left: 12px; padding-bottom: 0;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                      <tr>
+                        <td>
+                          <span style="display: inline-block; padding: 8px 12px; background-color: #FFB136; border-radius: 4px; font-family: 'Work Sans', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; color: #171614; text-transform: uppercase; line-height: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            POPULAR
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Card Content -->
+                <tr>
+                  <td style="padding: 0;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border: 2px solid #FFB136 !important; border-radius: 8px !important; -webkit-border-radius: 8px !important; -moz-border-radius: 8px !important;">
+                      <tr>
+                        <td class="plan-card" style="padding: 24px; padding-top: 16px;">
+                    <table role="presentation" class="plan-details" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <!-- Logo & Price -->
+                        <td class="plan-left" width="115" valign="top" style="padding-right: 24px; border-right: 1px solid #E6E6E6;">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                            <tr>
+                              <td align="center" style="padding-bottom: 12px;">
+                                <img src="{{cdnBaseUrl}}/logo-spot.png" alt="Spot" width="87" height="32" style="display: block;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 29px;">${{spotMonthlyPrice}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #515260; line-height: 19px;">/month</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="divider-vertical" width="1" style="background-color: #E6E6E6;"></td>
+                        <!-- Plan Stats -->
+                        <td class="plan-right" valign="middle" style="padding-left: 24px; padding-right: 0;">
+                          <table role="presentation" class="plan-stats" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{spotAnnualLimit}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Limit</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{spotDeductible}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Deductible</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 0; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">{{spotReimbursement}}%</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Reimbursement</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- CTA Button -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{spotPlanUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=spot-plan" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            View Plan Details
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Plan Card 2 - Embrace -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px; background-color: #ffffff; border: 1px solid #D7DCE5 !important; border-radius: 8px !important; -webkit-border-radius: 8px !important; -moz-border-radius: 8px !important;">
+                <tr>
+                  <td class="plan-card" style="padding: 24px;">
+                    <table role="presentation" class="plan-details" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="plan-left" width="115" valign="top" style="padding-right: 24px; border-right: 1px solid #E6E6E6;">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                            <tr>
+                              <td align="center" style="padding-bottom: 12px;">
+                                <img src="{{cdnBaseUrl}}/logo-embrace.svg" alt="Embrace" width="93" height="26" style="display: block;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 29px;">${{embraceMonthlyPrice}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #515260; line-height: 19px;">/month</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="divider-vertical" width="1" style="background-color: #E6E6E6;"></td>
+                        <td class="plan-right" valign="middle" style="padding-left: 24px; padding-right: 0;">
+                          <table role="presentation" class="plan-stats" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{embraceAnnualLimit}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Limit</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{embraceDeductible}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Deductible</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 0; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">{{embraceReimbursement}}%</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Reimbursement</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{embracePlanUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=embrace-plan" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            View Plan Details
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Plan Card 3 - Fetch -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px; background-color: #ffffff; border: 1px solid #D7DCE5 !important; border-radius: 8px !important; -webkit-border-radius: 8px !important; -moz-border-radius: 8px !important;">
+                <tr>
+                  <td class="plan-card" style="padding: 24px;">
+                    <table role="presentation" class="plan-details" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="plan-left" width="115" valign="top" style="padding-right: 24px; border-right: 1px solid #E6E6E6;">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                            <tr>
+                              <td align="center" style="padding-bottom: 12px;">
+                                <img src="{{cdnBaseUrl}}/logo-fetch.svg" alt="Fetch" width="73" height="25" style="display: block;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 29px;">${{fetchMonthlyPrice}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #515260; line-height: 19px;">/month</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="divider-vertical" width="1" style="background-color: #E6E6E6;"></td>
+                        <td class="plan-right" valign="middle" style="padding-left: 24px; padding-right: 0;">
+                          <table role="presentation" class="plan-stats" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{fetchAnnualLimit}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Limit</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{fetchDeductible}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Deductible</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 0; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">{{fetchReimbursement}}%</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Reimbursement</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{fetchPlanUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=fetch-plan" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            View Plan Details
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Plan Card 4 - Pets Best -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px; background-color: #ffffff; border: 1px solid #D7DCE5 !important; border-radius: 8px !important; -webkit-border-radius: 8px !important; -moz-border-radius: 8px !important;">
+                <tr>
+                  <td class="plan-card" style="padding: 24px;">
+                    <table role="presentation" class="plan-details" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td class="plan-left" width="115" valign="top" style="padding-right: 24px; border-right: 1px solid #E6E6E6;">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                            <tr>
+                              <td align="center" style="padding-bottom: 12px;">
+                                <img src="{{cdnBaseUrl}}/logo-petsbest.png" alt="Pets Best" width="105" height="41" style="display: block;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 29px;">${{petsbestMonthlyPrice}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #515260; line-height: 19px;">/month</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="divider-vertical" width="1" style="background-color: #E6E6E6;"></td>
+                        <td class="plan-right" valign="middle" style="padding-left: 24px; padding-right: 0;">
+                          <table role="presentation" class="plan-stats" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">{{petsbestAnnualLimit}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Limit</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 12px; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">${{petsbestDeductible}}</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Annual Deductible</span>
+                              </td>
+                              <td class="plan-stat" align="left" valign="top" style="padding-right: 0; padding-left: 0;">
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #000000; line-height: 20px;">{{petsbestReimbursement}}%</span><br>
+                                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 16px;">Reimbursement</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{petsbestPlanUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=petsbest-plan" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            View Plan Details
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Benefits Section -->
+          <tr>
+            <td class="content-padding" style="padding: 0 24px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <h2 class="section-heading" style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; color: #000000; line-height: 32px; text-align: center; text-transform: capitalize;">
+                      For {{petName}}, Get The Value Of Pet Insurance With The Right Coverage
+                    </h2>
+                  </td>
+                </tr>
+                <!-- Benefit 1 -->
+                <tr>
+                  <td style="padding: 12px 16px; margin-bottom: 8px; background-color: #ffffff; border-radius: 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right: 12px;">
+                          <img src="{{cdnBaseUrl}}/icon-cat.svg" alt="" width="28" height="28" style="display: block;">
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: #1E2125; line-height: 24px; padding-left: 0;">
+                          <strong>Protects you</strong> from unexpected vet bills
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Benefit 2 -->
+                <tr>
+                  <td style="padding: 12px 16px; margin-bottom: 8px; background-color: #ffffff; border-radius: 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right: 12px;">
+                          <img src="{{cdnBaseUrl}}/icon-cat.svg" alt="" width="28" height="28" style="display: block;">
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: #181716; line-height: 24px; font-weight: 700; padding-left: 0;">
+                          Let's you choose from a verified vet or specialist
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Benefit 3 -->
+                <tr>
+                  <td style="padding: 12px 16px; margin-bottom: 8px; background-color: #ffffff; border-radius: 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right: 12px;">
+                          <img src="{{cdnBaseUrl}}/icon-cat.svg" alt="" width="28" height="28" style="display: block;">
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: #1E2125; line-height: 24px; padding-left: 0;">
+                          May cover <strong>routine wellness and preventive care</strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Benefit 4 -->
+                <tr>
+                  <td style="padding: 12px 16px; margin-bottom: 8px; background-color: #ffffff; border-radius: 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right: 12px;">
+                          <img src="{{cdnBaseUrl}}/icon-cat.svg" alt="" width="28" height="28" style="display: block;">
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: #1E2125; line-height: 24px; padding-left: 0;">
+                          <strong>Provides peace of mind</strong> when the unexpected happens
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- CTA -->
+                <tr>
+                  <td style="padding-top: 24px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="background-color: #007AC8; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.20);">
+                          <a href="{{comparePlansUrl}}?utm_source=iterable&utm_medium=email&utm_campaign=pet-insurance&utm_content=benefits-cta" style="display: block; padding: 17px 24px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; line-height: 22px; text-align: center;">
+                            Compare Pet Insurance Plans
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer Image -->
+          <tr>
+            <td align="right" style="padding: 0;">
+              <img class="footer-image" src="{{cdnBaseUrl}}/footer-cat.png" alt="" width="373" height="300" style="display: block; max-width: 373px;">
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 32px 24px; background-color: #E3E7ED;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <!-- Logo & Social -->
+                <tr>
+                  <td style="padding-bottom: 16px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td>
+                          <img src="{{cdnBaseUrl}}/forbes-logo.svg" alt="Forbes" width="79" height="20" style="display: block; max-width: 79px;">
+                        </td>
+                        <td align="right">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                              <td style="padding-left: 8px;">
+                                <a href="{{twitterUrl}}"><img src="{{cdnBaseUrl}}/icon-twitter.svg" alt="Twitter" width="16" height="14" style="display: block;"></a>
+                              </td>
+                              <td style="padding-left: 8px;">
+                                <a href="{{linkedinUrl}}"><img src="{{cdnBaseUrl}}/icon-linkedin.svg" alt="LinkedIn" width="24" height="24" style="display: block;"></a>
+                              </td>
+                              <td style="padding-left: 8px;">
+                                <a href="{{facebookUrl}}"><img src="{{cdnBaseUrl}}/icon-facebook.svg" alt="Facebook" width="24" height="24" style="display: block;"></a>
+                              </td>
+                              <td style="padding-left: 8px;">
+                                <a href="{{emailUrl}}"><img src="{{cdnBaseUrl}}/icon-email.svg" alt="Email" width="17" height="14" style="display: block;"></a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Unsubscribe text -->
+                <tr>
+                  <td style="padding-bottom: 16px; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important; font-size: 12px; font-weight: 400; color: #1E293B; line-height: 20px;">
+                    This email was sent to {{email}} from Forbes Advisor.<br>
+                    If you no longer wish to receive these emails, simply click to <a href="{{unsubscribeUrl}}" style="color: #1E293B; text-decoration: underline; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;">unsubscribe</a>.
+                  </td>
+                </tr>
+                <!-- Legal text 1 -->
+                <tr>
+                  <td style="padding-bottom: 16px; font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important; font-size: 12px; font-weight: 400; color: #616A76; line-height: 20px;">
+                    The content may contain promotional offers from our advertising partners. Replying to this email will not address technical or product questions. To submit your user experience feedback, please reply directly to this email. Learn about our Forbes Advisor Privacy Policy.
+                  </td>
+                </tr>
+                <!-- Legal text 2 -->
+                <tr>
+                  <td style="font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important; font-size: 12px; font-weight: 400; color: #616A76; line-height: 20px;">
+                    This email was provided by Forbes Advisor, 350 5th Avenue, 41st Floor, New York, NY 10118.<br>
+                    Forbes Advisor is not a licensed insurance company. Insurance offerings are powered by CompareCoverage, NPN 20753534 and CA Lic. # 6011227. © 2025. All Rights Reserved.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- End email container -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- End main wrapper -->
+
+</body>
+</html>

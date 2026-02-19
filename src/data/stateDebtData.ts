@@ -1,0 +1,126 @@
+/**
+ * State Debt Data
+ * 
+ * Real debt statistics by state from official sources.
+ * All values are in USD.
+ */
+
+/**
+ * Average Credit Card Debt by State
+ * Source: NY Fed Consumer Credit Panel / Equifax, Q4 2024
+ */
+export const creditCardDebtByState: Record<string, number> = {
+  AK: 5170,
+  AL: 3250,
+  AR: 3170,
+  AZ: 4290,
+  CA: 4740,
+  CO: 4720,
+  CT: 4770,
+  DC: 5360,
+  DE: 4350,
+  FL: 4840,
+  GA: 4430,
+  HI: 5030,
+  IA: 3170,
+  ID: 3740,
+  IL: 4130,
+  IN: 3310,
+  KS: 3540,
+  KY: 3020,
+  LA: 3490,
+  MA: 4470,
+  MD: 4940,
+  ME: 3580,
+  MI: 3520,
+  MN: 3880,
+  MO: 3440,
+  MS: 2940,
+  MT: 3710,
+  NC: 3970,
+  ND: 3850,
+  NE: 3550,
+  NH: 4360,
+  NJ: 4950,
+  NM: 3400,
+  NV: 4820,
+  NY: 4650,
+  OH: 3450,
+  OK: 3370,
+  OR: 3860,
+  PA: 3850,
+  RI: 4300,
+  SC: 3860,
+  SD: 3410,
+  TN: 3510,
+  TX: 4440,
+  UT: 4070,
+  VA: 4620,
+  VT: 3640,
+  WA: 4450,
+  WI: 3270,
+  WV: 3040,
+  WY: 3820,
+}
+
+/**
+ * Average Personal Loan Debt by State
+ * Source: TransUnion Average New Account Balance
+ */
+export const personalLoanDebtByState: Record<string, number> = {
+  AK: 6789,
+  AL: 4268,
+  AR: 5893,
+  AZ: 7494,
+  CA: 7528,
+  CO: 12022,
+  CT: 11500,
+  DC: 12816,
+  DE: 8369,
+  FL: 6687,
+  GA: 7620,
+  HI: 12371,
+  IA: 7802,
+  ID: 6952,
+  IL: 7439,
+  IN: 6377,
+  KS: 6973,
+  KY: 6269,
+  LA: 5337,
+  MA: 6363,
+  MD: 8392,
+  ME: 5623,
+  MI: 11545,
+  MN: 9863,
+  MO: 4807,
+  MS: 9376,
+  MT: 12863,
+  NC: 10953,
+  ND: 9808,
+  NE: 8458,
+  NH: 8802,
+  NJ: 11083,
+  NM: 10731,
+  NV: 6691,
+  NY: 4996,
+  OH: 7147,
+  OK: 3379,
+  OR: 8640,
+  PA: 9203,
+  RI: 8474,
+  SC: 6201,
+  SD: 7792,
+  TN: 5057,
+  TX: 4400,
+  UT: 6765,
+  VA: 8663,
+  VT: 9288,
+  WA: 9609,
+  WI: 6788,
+  WV: 9779,
+  WY: 8975,
+}
+
+// US National averages as fallback
+export const nationalAverageCreditCard = 4180
+export const nationalAveragePersonalLoan = 7500

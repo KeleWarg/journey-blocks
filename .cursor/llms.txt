@@ -1,0 +1,576 @@
+# Forbes Advisor Debt Relief - LLMs.txt
+# Design System + Architecture Reference for AI Code Generation
+# Theme: LLM (Forbes Lead Gen)
+# Generated: January 24, 2026
+
+## PROJECT OVERVIEW
+- Product: Debt Relief Lead Generation Funnel
+- Framework: React/Next.js with TypeScript
+- Theme Source: LLM_tokens.json (Figma Variables Export)
+- Design Reference: Figma file 1sqO0lh2jxFWhGuglu87Bb
+
+## JOURNEY FLOW
+1. Location Screen → State selector with US map
+2. Type of Debt → Credit card, Loan, Both (radio selection)
+3. Debt Amount → Slider with savings estimate calculator
+4. Annual Income → Slider with debt projection
+5. Date of Birth → Month/Date/Year dropdowns
+6. Name → First Name, Last Name inputs
+7. Debt Profile → Personalized results display
+8. Email → Email input with validation
+9. Phone Verification → Phone input with legal consent
+10. Address → Street address with autocomplete
+
+## KEY FILES (suggested structure)
+- components/ui/Button.tsx
+- components/ui/Input.tsx
+- components/ui/Slider.tsx
+- components/ui/Select.tsx
+- components/ui/RadioGroup.tsx
+- components/layout/Header.tsx
+- components/layout/Footer.tsx
+- components/layout/ProgressIndicator.tsx
+- components/screens/*.tsx (one per journey step)
+- styles/tokens.css (CSS variables)
+
+## CRITICAL RULES
+- ALL primary buttons use blue fill (#007AC8)
+- Header shows "Secured by Forbes Advisor" branding
+- Progress indicator shows 3 phases: "Your debt profile | Your details | Reduce your debt"
+- Trust badges always visible at bottom: "Reduce your loan by 50%", "No impact on credit score", "Your data is safe with us"
+- Back button top-left on all form screens
+- Legal disclaimer text near phone/consent inputs
+- Responsive: Desktop (side-by-side layout) and Mobile (stacked)
+
+## COLORS (from LLM theme tokens)
+
+### Primary Brand
+primary-700 = #007AC8 (main brand, buttons, links)
+primary-750 = #1E72A8 (hover state)
+primary-800 = #0B5F95 (pressed/active state)
+primary-300 = #ECF1FF (light brand background)
+focus-ring = #80CAF4 (focus border)
+
+### Secondary/Accent
+secondary-500 = #F3C060 (gold/superlative highlights)
+secondary-300 = #FEF9EF (cream background)
+
+### Neutrals
+black = #000000 (headings)
+charcoal = #333333 (body text)
+medium-grey = #6A6A6A (secondary text)
+light-grey = #F8F8FA (input backgrounds)
+light-neutral = #F3F5FB (hover states, table rows)
+bright-grey = #ECF1FF (info backgrounds)
+divider = #EDEDED (borders, separators)
+white = #FFFFFF (backgrounds, button text)
+
+### Feedback
+error = #EB4015
+warning = #FFB136
+success = #0C7663
+
+## SPACING (8pt grid)
+xs = 4px
+sm = 8px
+md = 16px
+lg = 24px
+xl = 32px
+xxl = 48px
+containerPadding = 24px (mobile), 48px (desktop)
+buttonHeight = 48px
+inputHeight = 48px
+borderRadius = 8px
+
+## TYPOGRAPHY
+Font Family: System UI stack (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)
+
+### Sizes
+headline-xl = 32px, 700 weight, 1.2 line-height
+headline-lg = 24px, 700 weight, 1.3 line-height
+headline-md = 20px, 600 weight, 1.4 line-height
+body-lg = 18px, 400 weight, 1.5 line-height
+body-md = 16px, 400 weight, 1.5 line-height
+body-sm = 14px, 400 weight, 1.5 line-height
+caption = 12px, 400 weight, 1.4 line-height
+legal = 11px, 400 weight, 1.4 line-height
+
+## COMPONENTS
+
+### Primary Button (Blue fill)
+```tsx
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  type?: 'button' | 'submit';
+}
+
+// Styles
+const primaryButton = {
+  backgroundColor: '#007AC8', // primary-700
+  color: '#FFFFFF',
+  border: 'none',
+  borderRadius: '8px',
+  padding: '12px 24px',
+  minHeight: '48px',
+  fontWeight: 600,
+  fontSize: '16px',
+  cursor: 'pointer',
+  width: 'fullWidth ? "100%" : "auto"',
+  transition: 'background-color 0.2s ease',
+};
+
+// States
+hover: { backgroundColor: '#1E72A8' }  // primary-750
+active: { backgroundColor: '#0B5F95' } // primary-800
+disabled: { opacity: 0.5, cursor: 'not-allowed' }
+focus: { outline: '2px solid #80CAF4', outlineOffset: '2px' }
+```
+
+### Secondary Button (Outlined)
+```tsx
+const secondaryButton = {
+  backgroundColor: '#FFFFFF',
+  color: '#007AC8',
+  border: '1px solid #007AC8',
+  borderRadius: '8px',
+  padding: '12px 24px',
+  minHeight: '48px',
+  fontWeight: 600,
+  fontSize: '16px',
+  cursor: 'pointer',
+};
+
+// States
+hover: { backgroundColor: '#F3F5FB' } // light-neutral
+```
+
+### Text Input
+```tsx
+const textInput = {
+  backgroundColor: '#FFFFFF',
+  border: '1px solid #EDEDED', // divider
+  borderRadius: '8px',
+  padding: '12px 16px',
+  minHeight: '48px',
+  fontSize: '16px',
+  color: '#333333', // charcoal
+  width: '100%',
+};
+
+// Placeholder
+placeholder: { color: '#6A6A6A' } // medium-grey
+
+// States
+focus: { 
+  borderColor: '#007AC8',
+  outline: '2px solid #80CAF4',
+  outlineOffset: '-2px'
+}
+error: { borderColor: '#EB4015' }
+```
+
+### Radio/Checkbox Card
+```tsx
+// Use for debt type selection (Credit card, Loan, Both)
+const radioCard = {
+  backgroundColor: '#FFFFFF',
+  border: '1px solid #EDEDED',
+  borderRadius: '8px',
+  padding: '16px',
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+};
+
+// States
+selected: { 
+  borderColor: '#007AC8',
+  backgroundColor: '#ECF1FF' // primary-300
+}
+hover: { borderColor: '#007AC8' }
+```
+
+### Range Slider
+```tsx
+// Use for debt amount and income sliders
+const slider = {
+  trackBg: '#EDEDED',
+  trackFill: '#007AC8',
+  thumb: {
+    backgroundColor: '#007AC8',
+    width: '24px',
+    height: '24px',
+    borderRadius: '50%',
+    border: '3px solid #FFFFFF',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+  },
+};
+```
+
+### Select/Dropdown
+```tsx
+const select = {
+  backgroundColor: '#FFFFFF',
+  border: '1px solid #EDEDED',
+  borderRadius: '8px',
+  padding: '12px 16px',
+  minHeight: '48px',
+  fontSize: '16px',
+  appearance: 'none',
+  backgroundImage: 'url(chevron-down-icon)',
+  backgroundPosition: 'right 16px center',
+  backgroundRepeat: 'no-repeat',
+};
+```
+
+### Progress Indicator
+```tsx
+// 3-step progress bar
+const progressSteps = ['Your debt profile', 'Your details', 'Reduce your debt'];
+
+// Active step styling
+activeStep: {
+  color: '#007AC8',
+  fontWeight: 600,
+  borderBottom: '2px solid #007AC8',
+  paddingBottom: '8px',
+}
+
+// Inactive step styling
+inactiveStep: {
+  color: '#6A6A6A',
+  fontWeight: 400,
+}
+```
+
+### Header
+```tsx
+// Forbes Advisor header with trust signals
+<header style={{
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '16px 24px',
+  borderBottom: '1px solid #EDEDED',
+}}>
+  <div className="branding">
+    <span>Secured by <strong>Forbes Advisor</strong></span>
+  </div>
+  <div className="trust">
+    <span style={{ color: '#6A6A6A', fontSize: '14px' }}>
+      Your privacy is our priority
+    </span>
+  </div>
+  <nav className="links">
+    <a href="#">Advertiser Disclosure</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact Us</a>
+  </nav>
+</header>
+```
+
+### Trust Badges (Footer)
+```tsx
+// Bottom trust indicators
+const trustBadges = [
+  { icon: 'percent', text: 'Reduce your loan by 50%' },
+  { icon: 'shield', text: 'No impact on credit score' },
+  { icon: 'lock', text: 'Your data is safe with us' },
+];
+
+// Badge styling
+{
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  color: '#333333',
+  fontSize: '14px',
+}
+```
+
+### Savings Calculator Card
+```tsx
+// Debt profile results display
+const savingsCard = {
+  backgroundColor: '#FFFFFF',
+  border: '1px solid #EDEDED',
+  borderRadius: '12px',
+  padding: '24px',
+  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+};
+
+// Highlight values
+const highlightValue = {
+  fontSize: '32px',
+  fontWeight: 700,
+  color: '#007AC8',
+};
+
+// Savings badge
+const savingsBadge = {
+  backgroundColor: '#ECF1FF',
+  color: '#007AC8',
+  padding: '8px 16px',
+  borderRadius: '20px',
+  fontSize: '14px',
+  fontWeight: 600,
+};
+```
+
+### Donut/Progress Chart
+```tsx
+// Debt visualization
+const debtChart = {
+  size: 120,
+  strokeWidth: 12,
+  trackColor: '#F3F5FB',
+  fillColor: '#007AC8',
+  labelColor: '#333333',
+};
+```
+
+## SCREEN STRUCTURE
+
+### Form Screen Template
+```
+┌─────────────────────────────────────────────────────────┐
+│ [Header: Forbes Advisor | Privacy | Links]              │
+├─────────────────────────────────────────────────────────┤
+│ [← Back]                                                │
+│                                                         │
+│ [Progress: ● Your debt profile | ○ Your details | ○ ...] │
+│                                                         │
+│                                                         │
+│   Headline Question                                     │
+│   Supporting description text                           │
+│                                                         │
+│   [Form Field(s)]                                       │
+│                                                         │
+│                                                         │
+│   [Primary CTA Button]                                  │
+│                                                         │
+├─────────────────────────────────────────────────────────┤
+│ [Trust Badge] | [Trust Badge] | [Trust Badge]           │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Desktop Layout (side-by-side)
+```
+┌───────────────────┬───────────────────┐
+│                   │                   │
+│   Left Column:    │   Right Column:   │
+│   - Headline      │   - Illustration  │
+│   - Form fields   │   - Calculator    │
+│   - CTA button    │   - Preview       │
+│                   │                   │
+└───────────────────┴───────────────────┘
+```
+
+### Mobile Layout (stacked)
+```
+┌─────────────────────┐
+│   Headline          │
+│   Form fields       │
+│   CTA button        │
+│   Calculator        │
+└─────────────────────┘
+```
+
+## CSS VARIABLES (tokens.css)
+```css
+:root {
+  /* Primary */
+  --color-primary-700: #007AC8;
+  --color-primary-750: #1E72A8;
+  --color-primary-800: #0B5F95;
+  --color-primary-300: #ECF1FF;
+  --color-focus: #80CAF4;
+  
+  /* Secondary */
+  --color-secondary-500: #F3C060;
+  --color-secondary-300: #FEF9EF;
+  
+  /* Neutrals */
+  --color-black: #000000;
+  --color-charcoal: #333333;
+  --color-medium-grey: #6A6A6A;
+  --color-light-grey: #F8F8FA;
+  --color-light-neutral: #F3F5FB;
+  --color-bright-grey: #ECF1FF;
+  --color-divider: #EDEDED;
+  --color-white: #FFFFFF;
+  
+  /* Feedback */
+  --color-error: #EB4015;
+  --color-warning: #FFB136;
+  --color-success: #0C7663;
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  
+  /* Sizing */
+  --button-height: 48px;
+  --input-height: 48px;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-xl: 32px;
+  --font-size-lg: 24px;
+  --font-size-md: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-sm: 14px;
+  --font-size-caption: 12px;
+}
+```
+
+## TAILWIND CONFIG (if using Tailwind)
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          300: '#ECF1FF',
+          700: '#007AC8',
+          750: '#1E72A8',
+          800: '#0B5F95',
+        },
+        secondary: {
+          300: '#FEF9EF',
+          500: '#F3C060',
+        },
+        neutral: {
+          50: '#F8F8FA',
+          100: '#F3F5FB',
+          200: '#EDEDED',
+          300: '#ECF1FF',
+          500: '#6A6A6A',
+          800: '#333333',
+          900: '#000000',
+        },
+        feedback: {
+          error: '#EB4015',
+          warning: '#FFB136',
+          success: '#0C7663',
+        },
+        focus: '#80CAF4',
+      },
+      fontFamily: {
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      },
+      borderRadius: {
+        DEFAULT: '8px',
+        lg: '12px',
+      },
+    },
+  },
+};
+```
+
+## SCREEN-SPECIFIC CONTENT
+
+### 1. Location Screen
+- Headline: "See if You Qualify for Loan Free Debt Relief"
+- Description: "Have more than 15K in credit card and loan debt? You can reduce what you owe and lower your payments by as much as 50%"
+- UI: State dropdown + US map visualization
+- Stats: "$5,000 Avg debt per customer" | "$4,000 Avg savings"
+- CTA: "Continue"
+
+### 2. Type of Debt
+- Headline: "Tell us which kinds of these debts you have"
+- Options: Credit card, Loan, Both (radio cards)
+- Info: "Got mortgage, auto or student loan debts? How it works"
+- CTA: None (auto-advance on selection)
+
+### 3. Debt Amount
+- Headline: "How much debt do you have?"
+- Subhead: "You could reduce your debt amount by 50%"
+- UI: Slider ($10K - $60K+) with live calculator
+- Preview: "Your debt | New debt amount | Estimated savings | New monthly payments"
+- CTA: "Tell Us About Your Income"
+
+### 4. Annual Income
+- Headline: "What is your annual income?"
+- Description: "Please share your total income before taxes."
+- Link: "Why we ask for this information?"
+- UI: Slider ($10K/year - $200K+)
+- Preview: "Your debt | New debt amount | New monthly payments"
+- CTA: "Give Us Your Details"
+
+### 5. Date of Birth
+- Headline: "Your date of birth"
+- Description: "Your birth date helps providers tailor offers that fit your financial situation and eligibility."
+- UI: 3 dropdowns (Month, Date, Year)
+- CTA: "Continue"
+
+### 6. Name
+- Headline: "Your name"
+- Description: "Using your exact first and last name helps verify your identity and create your debt profile"
+- UI: First Name, Last Name inputs
+- CTA: "Continue"
+
+### 7. Debt Profile (Results)
+- Headline: "Here's your debt profile, {Name}"
+- Subhead: "Your debt profile matches with more than 200,000 people..."
+- UI: Donut chart, savings projection, timeline (24-48 Months)
+- Stats: "3 million people helped" | "$300/month single bill"
+- CTA: "Continue To See Your Options"
+
+### 8. Email
+- Headline: "What's your email?"
+- Description: "Please share your email so we know where to send your debt relief plan"
+- UI: Email input
+- CTA: "Continue"
+
+### 9. Phone Verification
+- Headline: "Confirm Your phone number"
+- Description: "Enter your phone number to confirm your identity..."
+- UI: Phone input (with formatting)
+- Legal: Spinwheel agreement, marketing consent, privacy statement checkboxes
+- CTA: "Agree & Continue"
+
+### 10. Address
+- Headline: "Your Address"
+- Description: "Your address helps us find the best debt relief options where you live"
+- UI: Address line 1, Address line 2, Zip code
+- CTA: "See Your Options"
+
+## VALIDATION RULES
+- Email: RFC 5322 compliant, required
+- Phone: (###) ###-#### format, required
+- DOB: Must be 18+ years old
+- Name: Min 2 characters each field, letters only
+- Debt amount: Min $10,000
+- Income: Min $10,000/year
+- Address: Zip code validation against state
+
+## NEVER DO
+- Use colors outside the LLM theme palette
+- Skip the trust badges at bottom
+- Remove the Forbes Advisor branding
+- Make buttons square (always use border-radius: 8px)
+- Use placeholder text in submitted inputs
+- Auto-submit forms without user action
+- Show phone keyboard for non-phone fields
+- Disable back navigation
+
+## ACCESSIBILITY
+- All interactive elements keyboard accessible
+- Focus states visible (2px #80CAF4 outline)
+- Form errors announced to screen readers
+- Color contrast minimum 4.5:1 for text
+- Touch targets minimum 44x44px
+- Labels associated with inputs via htmlFor/id
